@@ -59,6 +59,25 @@ You can always get up to date information (see, for example, [here (scroll down 
 
 [See this guide to learn how to use the Chainlink feeds](https://docs.chain.link/docs/get-the-latest-price/).
 
+
+## RedStone
+[RedStone](https://redstone.finance/) offers flexible Data Feeds for Lending Markets, Yield Aggregators, Perpetuals, Options, Derivatives, Stablecoins and other types of novel DeFi protocols. The infrastructure is well battle-tested and secures hundreds of millions of USD across mainnets.
+
+Putting data directly into storage (push oracle) is the easiest way to make information accessible to smart contracts. This approach used to work well for large update intervals and a small number of assets. However, new tokens are coming to DeFi, i.e., Optimism-native tokens and modern protocols require much lower latency, boosting the simple model's maintenance costs. In short, different types of protocols require different approaches to oracles.
+
+That's why, RedStone introduced a modular design where signed data packages are first put into a [Data Distribution Layer](https://docs.redstone.finance/docs/smart-contract-devs/how-it-works#data-flow) (DDL) and then consumed in 3 dedicated models.
+
+**3 Ways to integrate**
+Depending on the smart contract architecture and business demands, Builders can choose among 3 different models of data consumption:
+* [RedStone Core](https://docs.redstone.finance/docs/smart-contract-devs/get-started/redstone-core) (pull oracle) - data is dynamically injected into user transaction’s call-data achieving maximum gas efficiency and maintaining great user experience as the whole process fits into a single transaction. Below 10s update time, best for most use cases.
+* [RedStone Classic](https://docs.redstone.finance/docs/smart-contract-devs/get-started/redstone-classic) (push oracle) - data is pushed into on-chain storage via relayer. Dedicated to protocols designed for the traditional Oracles model, that want to have full control of the data source and update conditions (heartbeat and deviation threshold).
+* [RedStone X](https://docs.redstone.finance/docs/smart-contract-devs/get-started/redstone-x) - targets the needs of the most advanced protocols such as Perpetuals, Derivatives and Options by eliminating the front-running risk and providing price feeds at the very next Optimism block after users' interactions.
+
+RedStone is available both on Optimism mainnet and testnet, providing 1200+ [price feeds](https://app.redstone.finance/). See [this guide](https://docs.redstone.finance/) to learn how to use the RedStone feeds.
+
+Interested in integration? [Get in contact](https://discord.com/invite/PVxBZKFr46) with the RedStone team!
+
+
 ## Tellor
 
 [Tellor](https://tellor.io/) is a permissionless, censorship-resistant, and customizable oracle.
